@@ -61,7 +61,7 @@
 							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
 						</ul>
 
-						<a href="" class="btn btn-primary">book an appointment</a>
+						<a href="" class="btn btn-primary">book an lowyer</a>
 					</div>
 				</div>
 
@@ -99,6 +99,28 @@
 							<li class="nav-item">
 								<a class="nav-link" href="#contact-us-id">CONTACT</a>
 							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Register
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#lawyerregistermodel">Lawyer</a></li>
+									<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#clientregistermodel">Client</a></li>
+
+								</ul>
+							</li>
+
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Login
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#adminloginmodel">Admin</a></li>
+									<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#lawyerloginmodel">Lawyer</a></li>
+									<li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#clientloginmodel">Client</a></li>
+
+								</ul>
+							</li>
 
 						</ul>
 
@@ -110,14 +132,16 @@
 	<!--End Header	-->
 
 
+
+
 	<!--Start Banner Section	-->
 	<section class="banner-section" style="background: url(images/banner-bg.jpg) no-repeat">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="banner-text">
-						<h1>Welcome to Lawyer & Attorney</h1>
-						<p>We provide high standard clean website for your business solutions sit amet consectetuer.</p>
+						<h1>Welcome to Lawyer Firm</h1>
+						<p>Law is a set of rules that are created and are enforceable by social or governmental institutions to regulate behavior</p>
 						<div class="btn-main">
 							<a href="#team-section-id" class="btn btn-primary">Read More</a>
 							<a href="#quote-section-id" class="btn btn-outline-light">GET A QUOTE</a>
@@ -166,7 +190,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-4">
 					<div class="left-head">
-						<h2>Best Law & Attorney for everyone</h2>
+						<h2>Best Law for everyone</h2>
 					</div>
 				</div>
 
@@ -195,7 +219,7 @@
 			<div class="row  align-items-center">
 				<div class="col-lg-6">
 					<div class="about-text text-center">
-						<h2>About law & Attorney </h2>
+						<h2>About law </h2>
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium.
 						</p>
 						<div class="signature">
@@ -401,7 +425,7 @@
 
 				<div class="col-md-12">
 					<div class="btn-team text-center">
-						<a href="" class="btn btn-primary">All Attorney</a>
+						<a href="" class="btn btn-primary">All Lawyers</a>
 					</div>
 				</div>
 
@@ -533,12 +557,12 @@
 				<div class="col-lg-9">
 					<div class="cta-text">
 						<h2>Don't hesitate to contact us any time</h2>
-						<p>We provide high standar clean website for your business solutions</p>
+						<p>Law is a set of rules that are created and are enforceable by social or governmental institutions to regulate behavior</p>
 					</div>
 				</div>
 				<div class="col-lg-3">
 					<div class="cta-btn">
-						<a href="" class="btn btn-primary">book an appointment</a>
+						<a href="" class="btn btn-primary">book an Lawyer</a>
 					</div>
 				</div>
 
@@ -621,6 +645,134 @@
 	</footer>
 	<!--End Footer-->
 
+
+
+
+	<!--All modeal start-->
+	<div class="modal fade" id="adminloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form action="adminlogincore.php" method="post">
+					<div class="modal-body">
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" name="password">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal fade" id="lawyerloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Lawyer login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form action="lawyerlogincore.php" method="post">
+					<div class="modal-body">
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" name="password">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="clientloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Cleint login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form action="cleintlogincore.php" method="post">
+					<div class="modal-body">
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" name="pasword">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal fade" id="lawyerregistermodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal fade" id="clientregistermodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--All modeals End-->
 
 
 	<!--Script	-->
