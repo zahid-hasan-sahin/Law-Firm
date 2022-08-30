@@ -5,6 +5,17 @@ require_once("../dbconnection.php");
 if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
     header("Location:../index.php");
 }
+$email = $_SESSION['email'];
+$query = "select * from admin where email='" . $email . "';";
+$result = $conn->query($query);
+$adminname = "";
+if ($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()) {
+
+        $adminname = $row['name'];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +29,7 @@ if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Home</title>
+    <title>Admin</title>
 
     <!--Bootstrap CSS	-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -34,7 +45,7 @@ if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!--Fontawesome icon	-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!--OWl carousel	-->
@@ -56,20 +67,26 @@ if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <img src="../images/about.jpg" alt="Italian Trulli" height="80px" width="70px">
             </a>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="index.php">
+        
+                    <span><?php echo $adminname ?> || admin</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="index.php">
+                    <i class="fa fa-home"></i>
                     <span>Home</span></a>
             </li>
 
@@ -78,14 +95,28 @@ if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Options
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                <a class="nav-link collapsed" href="lawyer.php">
+                <i class="fa fa-male"></i>
+                    <span>Lawyer</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="cleint.php">
+                <i class="fa fa-handshake-o"></i>
+                    <span>Cleint</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="Quote.php">
+                <i class="fa fa-legal"></i>
+                    <span>Quote</span>
                 </a>
             </li>
 
@@ -101,39 +132,26 @@ if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand-lg bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
+
                             </ul>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+
+
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo $adminname ?>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="editprofile.php">edit profile</a></li>
+                                    <hr class="dropdown-divider">
+                                    <li><a class="dropdown-item" href="logout.php">log-out</a></li>
+
+
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </nav>
