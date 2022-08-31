@@ -1,3 +1,9 @@
+<?php
+include_once 'dbconnection.php';
+session_start();
+?>
+
+
 <!doctype html>
 <html>
 
@@ -443,55 +449,45 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="section-title-main">
-						<h2 class="section-title">OUR QUOTE</h2>
+					<div class="section-title-main center">
+						<h2 class="section-title text-center">OUR QUOTE</h2>
 					</div>
 
 					<div class="col-md-12">
 						<div class="owl-carousel owl-theme testimonial-carousel">
-							<div class="item">
-								<div class="test-box">
-									<p>“Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ”</p>
-									<div class="test-info">
-										<img src="images/review-img.jpg" alt="">
-										<div class="test-authot">
-											<h4>Sonata River</h4>
-											<h5>Company ABC</h5>
+
+							<?php
+							$query = "select * from quotes;";
+							$result = $conn->query($query);
+							if ($result->num_rows > 0) {
+								while ($row = $result->fetch_assoc()) {
+									$quote = $row['quote'];
+									$writer = $row['writer'];
+									$identity = $row['identity'];
+							?>
+
+									<div class="item">
+										<div class="test-box">
+											<p>“<?php echo $quote ?> ”</p>
+											<div class="test-info">
+
+												<div class="test-authot">
+													<h4><?php echo $writer ?> </h4>
+													<h5>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $identity ?></h5>
+												</div>
+											</div>
+
 										</div>
 									</div>
 
-								</div>
-							</div>
+							<?php
+								}
+							}
 
 
-							<div class="item">
-								<div class="test-box">
-									<p>“Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ”</p>
-									<div class="test-info">
-										<img src="images/review-img.jpg" alt="">
-										<div class="test-authot">
-											<h4>Sonata River</h4>
-											<h5>Company ABC</h5>
-										</div>
-									</div>
-
-								</div>
-							</div>
+							?>
 
 
-							<div class="item">
-								<div class="test-box">
-									<p>“Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ”</p>
-									<div class="test-info">
-										<img src="images/review-img.jpg" alt="">
-										<div class="test-authot">
-											<h4>Sonata River</h4>
-											<h5>Company ABC</h5>
-										</div>
-									</div>
-
-								</div>
-							</div>
 
 						</div>
 					</div>
@@ -781,12 +777,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-	
-	
-	
+
+
+
 	<script>
-
-
 		$('.testimonial-carousel').owlCarousel({
 			loop: true,
 			margin: 10,
