@@ -261,84 +261,36 @@ session_start();
 						<h2 class="section-title">Legal Practices Area</h2>
 					</div>
 				</div>
+				<?php
 
+				$query = "select * from lawyercategories;";
+				$result = $conn->query($query);
+				if ($result->num_rows > 0) {
 
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services1.jpg" alt="">
-						</div>
-						<div class="services-info">
-							<h3>Fire Accident</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
+					while ($row = $result->fetch_assoc()) {
 
+						$id = $row['id'];
+						$category = $row['category'];
+						$description = $row['description'];
+						$image = $row['image'];
 
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services2.jpg" alt="">
+				?>
+						<div class="col-lg-4">
+							<div class="services-box">
+								<div class="services-media">
+									<img src="images/<?php echo $image ?>" alt="">
+								</div>
+								<div class="services-info">
+									<h3><?php echo $category ?></h3>
+									<p><?php echo $description ?></p>
+								</div>
+							</div>
 						</div>
-						<div class="services-info">
-							<h3>Accident Injuries</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services3.jpg" alt="">
-						</div>
-						<div class="services-info">
-							<h3>Family Law</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services4.jpg" alt="">
-						</div>
-						<div class="services-info">
-							<h3>Financial Law</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services5.jpg" alt="">
-						</div>
-						<div class="services-info">
-							<h3>Drug Offences</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4">
-					<div class="services-box">
-						<div class="services-media">
-							<img src="images/services6.jpg" alt="">
-						</div>
-						<div class="services-info">
-							<h3>Civil Litigation</h3>
-							<p>sum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore .</p>
-						</div>
-					</div>
-				</div>
-
+				<?php
+					}
+				}
+				?>
 			</div>
 		</div>
 	</section>
