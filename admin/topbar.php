@@ -10,12 +10,14 @@ $query = "select * from admin where email='" . $email . "';";
 $result = $conn->query($query);
 $adminname = "";
 $profilepic = "";
+$password = "";
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
 
         $adminname = $row['name'];
         $profilepic = $row['profilepic'];
+        $password= $row['password'];
     }
 }
 ?>
@@ -73,7 +75,7 @@ if ($result->num_rows > 0) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <img src="../images/<?php echo $profilepic ?>" alt="profile pic" height="80px" width="70px">
+                <img src="images/<?php echo $profilepic ?>" alt="profile pic" height="80px" width="70px">
             </a>
 
             <li class="nav-item ">
@@ -126,7 +128,7 @@ if ($result->num_rows > 0) {
 
 
             <li class="nav-item" id="categories">
-                <a class="nav-link collapsed" href="Quote.php">
+                <a class="nav-link collapsed" href="categories.php">
                     <i class="fa fa-group"></i>
                     <span>Categories</span>
                 </a>

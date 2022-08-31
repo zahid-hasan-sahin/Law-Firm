@@ -14,7 +14,7 @@ if ($filename!="") {
 
     $tempname = $_FILES["profilepic"]["tmp_name"];
 
-    $folder = "../images/" . $filename;
+    $folder = "images/" . $filename;
 
     $sql = "UPDATE admin set email='" . $email . "' , password='" . $password . "',name='" . $name . "',profilepic='" . $filename . "';";
 
