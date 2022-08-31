@@ -10,12 +10,14 @@ $query = "select * from admin where email='" . $email . "';";
 $result = $conn->query($query);
 $adminname = "";
 $profilepic = "";
+$password = "";
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
 
         $adminname = $row['name'];
-        $profilepic=$row['profilepic'];
+        $profilepic = $row['profilepic'];
+        $password = $row['password'];
     }
 }
 ?>
@@ -73,12 +75,12 @@ if ($result->num_rows > 0) {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <img src="../images/<?php echo $profilepic?>" alt="profile pic" height="80px" width="70px">
+                <img src="../images/<?php echo $profilepic ?>" alt="Italian Trulli" height="80px" width="70px">
             </a>
 
             <li class="nav-item ">
                 <a class="nav-link" href="index.php">
-        
+
                     <span><?php echo $adminname ?> || admin</span></a>
             </li>
 
@@ -86,7 +88,7 @@ if ($result->num_rows > 0) {
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fa fa-home"></i>
                     <span>Home</span></a>
@@ -103,38 +105,38 @@ if ($result->num_rows > 0) {
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="lawyer.php">
-                <i class="fa fa-male"></i>
+                    <i class="fa fa-male"></i>
                     <span>Lawyer</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="client.php">
-                <i class="fa fa-handshake-o"></i>
+                    <i class="fa fa-handshake-o"></i>
                     <span>Client</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="Quote.php">
-                <i class="fa fa-legal"></i>
+                    <i class="fa fa-legal"></i>
                     <span>Quote</span>
                 </a>
             </li>
 
-           
 
-            
+
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="Quote.php">
-                <i class="fa fa-group"></i>
+                    <i class="fa fa-group"></i>
                     <span>Categories</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="appointment.php">
-                <i class="fa fa-file-archive-o"></i>
+                    <i class="fa fa-file-archive-o"></i>
                     <span>Appointments</span>
                 </a>
             </li>
@@ -163,9 +165,9 @@ if ($result->num_rows > 0) {
                                     <?php echo $adminname ?>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="editprofile.php"> <i class="fa fa-edit"></i> edit profile</a></li>
+                                    <li><a class="dropdown-item" href="editprofile.php">edit profile</a></li>
                                     <hr class="dropdown-divider">
-                                    <li><a class="dropdown-item" href="logout.php">  <i class="fa fa-sign-out"></i> log-out</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">log-out</a></li>
 
 
                                 </ul>
@@ -181,8 +183,31 @@ if ($result->num_rows > 0) {
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Home</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Edit profile</h1>
                     </div>
+                    <hr class="sidebar-divider">
+                    <form action="editprofilecore.php" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $email ?>" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" value="<?php echo $password ?>" name="password">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">name</label>
+                            <input type="text" class="form-control" id="exampleInputname" value="<?php echo $adminname ?>" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Profile picture</label>
+                            <input class="form-control" type="file" id="formFile" name="profilepic" accept="image/*">
+                            <div id="fileHelp" class="form-text">if don't want to change profile pic keep it blank ( don't choose any file).</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
 
                 </div>
