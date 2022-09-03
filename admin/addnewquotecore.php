@@ -6,6 +6,8 @@ $quote = $_POST['quote'];
 $writer = $_POST['writer'];
 $identity = $_POST['identity'];
 
+$quote = str_replace("'","`",$quote);
+
 $query = "INSERT into quotes VALUES('" . $quote . "','" . $writer . "','" . $identity . "');";
 $result = $conn->query($query);
 if ($result) {
