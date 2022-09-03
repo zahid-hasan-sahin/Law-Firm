@@ -21,7 +21,7 @@ $tempname = $_FILES["picture"]["tmp_name"];
 $folder = "lawyer/images/" . $filename;
 
 $sql = "insert into  lawyers(email  ,password,name,categoryid,rate,description,phonenumber,location,picture) 
-values('" . $email  . "' , '" . $password . "','" . $name . "','" . $category . "','" . $rate . "','" . $description . "','" . $location . "','" . $phonenumber . "','" . $filename . "');";
+values('" . $email  . "' , '" . $password . "','" . $name . "','" . $category . "','" . $rate . "','" . $description . "','" . $phonenumber . "','" . $location . "','" . $filename . "');";
 
 $res = $conn->query($sql);
 if ($res) {

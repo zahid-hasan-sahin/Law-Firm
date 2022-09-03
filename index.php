@@ -156,6 +156,7 @@
 
 				while ($row = $result->fetch_assoc()) {
 
+					$email = $row['email'];
 					$name = $row['name'];
 					$categoryid = $row['categoryid'];
 					$picture = $row['picture'];
@@ -179,12 +180,13 @@
 								<h3><?php echo $name ?></h3>
 								<p>- <?php echo $category ?> -</p>
 								<ul class="top-social">
-									<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-									<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-									<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-									<li><a href=""><i class="fa fa-whatsapp"></i></a> </li>
+								<li><a href="#!" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-whatsapp"></i></a></li>
 								</ul>
-								<a type="button" class="btn btn-secondary  btn-block mt-3" href="#">Read More</a>
+								<a type="button" class="btn btn-secondary  btn-block mt-3" href="lawyerreadmore.php?email=<?php echo $email ?>#details">Read More</a>
+
 							</div>
 						</div>
 					</div>
@@ -316,194 +318,6 @@
 
 
 
-
-
-
-<!--All modeal start-->
-<div class="modal fade" id="adminloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<form action="adminlogincore.php" method="post">
-				<div class="modal-body">
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" name="password">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Login</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-
-<div class="modal fade" id="lawyerloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Lawyer login</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<form action="lawyerlogincore.php" method="post">
-				<div class="modal-body">
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" name="password">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Login</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-<div class="modal fade" id="clientloginmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">client login</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<form action="clientlogincore.php" method="post">
-				<div class="modal-body">
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input type="password" class="form-control" id="exampleInputPassword1" name="pasword">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Login</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-
-<div class="modal fade" id="lawyerregistermodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Lawyer Registration</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<form action="lawyerregister.php" method="POST" enctype="multipart/form-data">
-					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Email address</label>
-						<input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input required name="password" type="password" class="form-control" id="exampleInputPassword1">
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputName" class="form-label">Name</label>
-						<input required name="name" type="text" class="form-control" id="exampleInputName">
-					</div>
-
-					<div class="mb-3">
-						<label for="category" class="form-label">Select Category</label>
-						<select required name="category" class="form-select" aria-label="Default select example" id="category">
-							<?php
-							$query = "select * from lawyercategories;";
-							$result = $conn->query($query);
-
-							if ($result->num_rows > 0) {
-
-								while ($row = $result->fetch_assoc()) {
-
-									$id = $row['id'];
-									$category = $row['category'];
-
-							?>
-									<option value="<?php echo $id ?>"><?php echo $category ?></option>
-							<?php
-								}
-							}
-							?>
-						</select>
-					</div>
-
-					<div class="mb-3">
-						<label for="exampleInputRate" class="form-label">Rate</label>
-						<input required name="rate" type="number" class="form-control" id="exampleInputRate">
-					</div>
-					<div class="mb-3">
-						<div class="form-group">
-							<label for="exampleFormControlTextarea" class="form-label">Description</label>
-							<textarea name="description" required class="form-control rounded-0" id="exampleFormControlTextarea" rows="3"></textarea>
-						</div>
-					</div>
-					<div class="mb-3">
-						<label for="exampleInputLocation" class="form-label">Location</label>
-						<input required name="location" type="text" class="form-control" id="exampleInputLocation">
-					</div>
-
-					<div class="mb-3">
-						<label for="exampleInputPhoneNumber" class="form-label">Phone Number</label>
-						<input name="phonenumber" required type="text" class="form-control" id="exampleInputPhoneNumber">
-					</div>
-
-					<div class="mb-3">
-						<label for="formFile" class="form-label">Picture</label>
-						<input name="picture" required class="form-control" type="file" id="formFile">
-					</div>
-
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-
-<div class="modal fade" id="clientregistermodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				...
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--All modeals End-->
 
 
 <?php include 'footer.php' ?>

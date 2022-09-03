@@ -45,6 +45,7 @@
 
                 while ($row = $result->fetch_assoc()) {
 
+                    $email = $row['email'];
                     $name = $row['name'];
                     $categoryid = $row['categoryid'];
                     $picture = $row['picture'];
@@ -68,12 +69,13 @@
                                 <h3><?php echo $name ?></h3>
                                 <p>- <?php echo $category ?> -</p>
                                 <ul class="top-social">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a> </li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a> </li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a> </li>
-                                    <li><a href=""><i class="fa fa-whatsapp"></i></a> </li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#!" class="rounded-3"><i class="fab fa-whatsapp"></i></a></li>
                                 </ul>
-                                <a type="button" class="btn btn-secondary  btn-block mt-3" href="#">Read More</a>
+                                <a type="button" class="btn btn-secondary  btn-block mt-3" href="lawyerreadmore.php?email=<?php echo $email ?>#details">Read More</a>
+
                             </div>
                         </div>
                     </div>
