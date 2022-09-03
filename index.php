@@ -146,78 +146,65 @@
 				</div>
 			</div>
 
-			<div class="col-lg-3">
-				<div class="team-box">
-					<div class="team-media">
-						<img src="images/team1.jpg" alt="">
-					</div>
-					<div class="team-info">
-						<h3>Rudhi Sasmito</h3>
-						<p>- Lead Lawyer -</p>
-						<ul class="top-social">
-							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3">
-				<div class="team-box">
-					<div class="team-media">
-						<img src="images/team2.jpg" alt="">
-					</div>
-					<div class="team-info">
-						<h3>Rudhi Sasmito</h3>
-						<p>- Lead Lawyer -</p>
-						<ul class="top-social">
-							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
-						</ul>
-					</div>
-				</div>
-			</div>
 
 
-			<div class="col-lg-3">
-				<div class="team-box">
-					<div class="team-media">
-						<img src="images/team3.jpg" alt="">
-					</div>
-					<div class="team-info">
-						<h3>Sarah Doel</h3>
-						<p>- Lead Lawyer -</p>
-						<ul class="top-social">
-							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
-						</ul>
-					</div>
-				</div>
-			</div>
 
-			<div class="col-lg-3">
-				<div class="team-box">
-					<div class="team-media">
-						<img src="images/team4.jpg" alt="">
+			<?php
+			$query = "select * from lawyers limit 4;";
+			$result = $conn->query($query);
+			if ($result->num_rows > 0) {
+
+				while ($row = $result->fetch_assoc()) {
+
+					$name = $row['name'];
+					$categoryid = $row['categoryid'];
+					$picture = $row['picture'];
+					$query1 = "select * from lawyercategories where id=" . $categoryid . ";";
+					$result1 = $conn->query($query1);
+					$category = "";
+					if ($result1->num_rows > 0) {
+
+						while ($row1 = $result1->fetch_assoc()) {
+							$category = $row1['category'];
+						}
+					}
+
+			?>
+					<div class="col-lg-3">
+						<div class="team-box">
+							<div class="team-media">
+								<img src="lawyer/images/<?php echo $picture ?>" alt="">
+							</div>
+							<div class="team-info">
+								<h3><?php echo $name ?></h3>
+								<p>- <?php echo $category ?> -</p>
+								<ul class="top-social">
+									<li><a href=""><i class="fa fa-facebook"></i></a> </li>
+									<li><a href=""><i class="fa fa-instagram"></i></a> </li>
+									<li><a href=""><i class="fa fa-twitter"></i></a> </li>
+									<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
+								</ul>
+								<a type="button" class="btn btn-secondary  btn-block mt-3" href="#">Read More</a>
+							</div>
+						</div>
 					</div>
-					<div class="team-info">
-						<h3>Rome Doel</h3>
-						<p>- Lead Lawyer -</p>
-						<ul class="top-social">
-							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
-						</ul>
-					</div>
-				</div>
-			</div>
+
+
+
+			<?php
+
+				}
+			}
+			?>
+
+
+
+
+
+
+
+
+
 
 			<div class="col-md-12">
 				<div class="btn-team text-center">
@@ -434,19 +421,23 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<form action="lawyerregister.php" method="post" enctype="multipart/form-data">
+				<form action="lawyerregister.php" method="POST" enctype="multipart/form-data">
 					<div class="mb-3">
 						<label for="exampleInputEmail1" class="form-label">Email address</label>
-						<input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+						<input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Password</label>
-						<input required type="password" class="form-control" id="exampleInputPassword1">
+						<input required name="password" type="password" class="form-control" id="exampleInputPassword1">
+					</div>
+					<div class="mb-3">
+						<label for="exampleInputName" class="form-label">Name</label>
+						<input required name="name" type="text" class="form-control" id="exampleInputName">
 					</div>
 
 					<div class="mb-3">
-						<label for="catagory" class="form-label">Select Catagory</label>
-						<select required class="form-select" aria-label="Default select example" id="catagory">
+						<label for="category" class="form-label">Select Category</label>
+						<select required name="category" class="form-select" aria-label="Default select example" id="category">
 							<?php
 							$query = "select * from lawyercategories;";
 							$result = $conn->query($query);
@@ -469,27 +460,27 @@
 
 					<div class="mb-3">
 						<label for="exampleInputRate" class="form-label">Rate</label>
-						<input required type="number" class="form-control" id="exampleInputRate">
+						<input required name="rate" type="number" class="form-control" id="exampleInputRate">
 					</div>
 					<div class="mb-3">
 						<div class="form-group">
 							<label for="exampleFormControlTextarea" class="form-label">Description</label>
-							<textarea required class="form-control rounded-0" id="exampleFormControlTextarea" rows="3"></textarea>
+							<textarea name="description" required class="form-control rounded-0" id="exampleFormControlTextarea" rows="3"></textarea>
 						</div>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputLocation" class="form-label">Location</label>
-						<input required type="text" class="form-control" id="exampleInputLocation">
+						<input required name="location" type="text" class="form-control" id="exampleInputLocation">
 					</div>
 
 					<div class="mb-3">
 						<label for="exampleInputPhoneNumber" class="form-label">Phone Number</label>
-						<input type="text" class="form-control" id="exampleInputPhoneNumber" required>
+						<input name="phonenumber" required type="text" class="form-control" id="exampleInputPhoneNumber">
 					</div>
 
 					<div class="mb-3">
 						<label for="formFile" class="form-label">Picture</label>
-						<input class="form-control" type="file" id="formFile" required>
+						<input name="picture" required class="form-control" type="file" id="formFile">
 					</div>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
