@@ -11,7 +11,7 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="cta-btn">
-						<a href="" class="btn btn-primary">book an Lawyer</a>
+						<a href="lawyers.php" class="btn btn-primary">book an Lawyer</a>
 					</div>
 				</div>
 
@@ -34,7 +34,7 @@
 							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
 							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
 							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
+							<li><a href=""><i class="fa fa-whatsapp"></i></a> </li>
 						</ul>
 					</div>
 				</div>

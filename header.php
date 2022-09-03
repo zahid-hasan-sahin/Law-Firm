@@ -90,17 +90,17 @@ session_start();
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link " href="#">Home</a>
+								<a class="nav-link " href="index.php?">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="index.php?#about-section-id">ABOUT US</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#services-section-id">SERVICES</a>
+								<a class="nav-link" href="index.php?#services-section-id">SERVICES</a>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" href="#contact-us-id">CONTACT</a>
+								<a class="nav-link" href="index.php?#contact-us-id">CONTACT</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -158,8 +158,8 @@ session_start();
 						<h1>Welcome to Lawyer Firm</h1>
 						<p>Law is a set of rules that are created and are enforceable by social or governmental institutions to regulate behavior</p>
 						<div class="btn-main">
-							<a href="#team-section-id" class="btn btn-primary">Read More</a>
-							<a href="#quote-section-id" class="btn btn-outline-light">GET A QUOTE</a>
+							<a href="index.php?#team-section-id" class="btn btn-primary">Read More</a>
+							<a href="index.php?#quote-section-id" class="btn btn-outline-light">GET A QUOTE</a>
 						</div>
 					</div>
 				</div>

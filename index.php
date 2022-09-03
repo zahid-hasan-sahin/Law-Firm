@@ -182,7 +182,7 @@
 									<li><a href=""><i class="fa fa-facebook"></i></a> </li>
 									<li><a href=""><i class="fa fa-instagram"></i></a> </li>
 									<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-									<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
+									<li><a href=""><i class="fa fa-whatsapp"></i></a> </li>
 								</ul>
 								<a type="button" class="btn btn-secondary  btn-block mt-3" href="#">Read More</a>
 							</div>
@@ -199,16 +199,9 @@
 
 
 
-
-
-
-
-
-
-
 			<div class="col-md-12">
 				<div class="btn-team text-center">
-					<a href="" class="btn btn-primary">All Lawyers</a>
+					<a href="lawyers.php" class="btn btn-primary">All Lawyers</a>
 				</div>
 			</div>
 
