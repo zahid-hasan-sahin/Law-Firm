@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 
-<section class="lawyers">
+<section class="lawyers" id="lawyers">
     <div class="container">
         <div class="row">
 
@@ -12,7 +12,34 @@
 
 
             <?php
-            $query = "select * from lawyers";
+            $query = "";
+            if (isset($_GET['search'])) {
+                $search = $_GET['search'];
+                $q = "select * from lawyercategories WHERE category LIKE '%" . $search . "%'";
+                $result1 = $conn->query($q);
+                $id ="-1";
+                if ($result1->num_rows > 0) {
+
+                    while ($row1 = $result1->fetch_assoc()) {
+
+                        $id = $row1['id'];
+                    }
+                }
+
+
+
+                $query = "select * from lawyers WHERE name LIKE '%" . $search . "%' 
+                or rate LIKE '%" . $search . "%' 
+                or description LIKE '%" . $search . "%' 
+                or phonenumber  LIKE '%" . $search . "%' 
+                or location LIKE '%" . $search . "%' 
+
+                or categoryid =" . $id . ";";
+
+            } else {
+                $query = "select * from lawyers";
+            }
+    
             $result = $conn->query($query);
             if ($result->num_rows > 0) {
 

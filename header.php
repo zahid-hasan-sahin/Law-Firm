@@ -53,8 +53,8 @@ session_start();
 				<div class="col-lg-6">
 					<div class="top-contact">
 						<ul>
-							<li><a href="tel:+62 800 9000 123"> <i class="fa fa-phone"></i> +62 800 9000 123</a> </li>
-							<li><a href="mailto:mail@yoursite.com"> <i class="fa fa-envelope"></i> mail@yoursite.com</a> </li>
+							<li><a href="tel:+62 800 9000 123"> <i class="fa fa-phone"></i> +880 1767 ** ** ***</a> </li>
+							<li><a href="mailto:mail@yoursite.com"> <i class="fa fa-envelope"></i> mail@gmail.com</a> </li>
 						</ul>
 					</div>
 				</div>
@@ -68,7 +68,7 @@ session_start();
 							<li><a href=""><i class="fa fa-pinterest"></i></a> </li>
 						</ul>
 
-						<a href="" class="btn btn-primary">book an lowyer</a>
+						<a href="lawyers.php?#lawyers" class="btn btn-primary">book an lowyer</a>
 					</div>
 				</div>
 
@@ -83,7 +83,7 @@ session_start();
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+					<a class="navbar-brand" href="index.php"><img src="images/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -135,8 +135,8 @@ session_start();
 
 		<div class="container-fluid">
 			<div class="row">
-				<form class="d-flex col-md-4 offset-md-8  " role="search">
-					<input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+				<form class="d-flex col-md-4 offset-md-8  " role="search" action="lawyers.php?#lawyers" method="get">
+					<input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search" required>
 					<button class="btn btn-outline-primary bg-warning" type="submit">Search</button>
 				</form>
 			</div>

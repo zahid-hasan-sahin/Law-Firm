@@ -11,7 +11,7 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="cta-btn">
-						<a href="lawyers.php" class="btn btn-primary">book an Lawyer</a>
+						<a href="lawyers.php?#lawyers" class="btn btn-primary">book an Lawyer</a>
 					</div>
 				</div>
 
