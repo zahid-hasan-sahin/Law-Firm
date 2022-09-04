@@ -165,9 +165,9 @@ if ($result->num_rows > 0) {
                                     <?php echo $adminname ?>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="editprofile.php"> <i class="fa fa-edit"></i> edit profile</a></li>
+                                    <li><a class="dropdown-item" href="editprofile.php"> <i class="fa fa-edit"></i> Edit Profile</a></li>
                                     <hr class="dropdown-divider">
-                                    <li><a class="dropdown-item" href="logout.php"> <i class="fa fa-sign-out"></i> log-out</a></li>
+                                    <li><a class="dropdown-item" href="logout.php"> <i class="fa fa-sign-out"></i> Log-Out</a></li>
 
 
                                 </ul>
