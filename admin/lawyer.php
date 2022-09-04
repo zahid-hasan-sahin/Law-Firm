@@ -18,7 +18,7 @@ $result = $conn->query($query);
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Gmail</th>
+                <th scope="col">Email</th>
                 <th scope="col">Name</th>
                 <th scope="col">Rate</th>
                 <th scope="col">Description</th>

@@ -5,7 +5,7 @@
 <div class="container" id="details">
 
 
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center">
 
         <div class="col-md-12 text-center">
             <div class="section-title-main">
@@ -80,6 +80,12 @@
             }
         }
 ?>
+</div>
+
+<div class="container  mb-5">
+    <div class="col-md-12 text-center">
+        <a  href =" "type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clientloginmodel">HIRE ME</a>
+    </div>
 </div>
 
 <?php include 'footer.php' ?>

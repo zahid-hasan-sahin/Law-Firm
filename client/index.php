@@ -174,7 +174,7 @@
 					<div class="col-lg-3">
 						<div class="team-box">
 							<div class="team-media">
-								<img src="images/<?php echo $picture ?>" alt="">
+								<img src="../lawyer/images/<?php echo $picture ?>" alt="">
 							</div>
 							<div class="team-info">
 								<h3><?php echo $name ?></h3>
