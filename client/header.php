@@ -2,22 +2,17 @@
 
 session_start();
 require_once("../dbconnection.php");
-if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "lawyer")==0) {
+if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "client")==0) {
     header("Location:../index.php");
 }
 $email = $_SESSION['email'];
-$query = "select * from lawyers where email='" . $email . "';";
+$query = "select * from clients where email='" . $email . "';";
 $result = $conn->query($query);
 $name = "";
 $password = "";
-$categoryid = "";
-$rate = "";
-$description = "";
 $phonenumber = "";
-$location = "";
 $picture = "";
 $joindate = "";
-
 
 if ($result->num_rows > 0) {
 
@@ -25,15 +20,13 @@ if ($result->num_rows > 0) {
 
         $name = $row['name'];
         $password = $row['password'];
-        $categoryid = $row['categoryid'];
-        $rate = $row['rate'];
-        $description = $row['description'];
         $phonenumber = $row['phonenumber'];
-        $location = $row['location'];
         $picture = $row['picture'];
+    
         $joindate = $row['joindate'];
     }
 }
+
 ?>
 
 
@@ -45,7 +38,7 @@ if ($result->num_rows > 0) {
 
     <!--For responsive	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawyer</title>
+    <title>Clint</title>
 
     <!--Bootstrap CSS	-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -152,7 +145,7 @@ if ($result->num_rows > 0) {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?#contact-us-id">Appoinments</a>
+                                <a class="nav-link" href="lawyers.php?#lawyers">Lawyers</a>
                             </li>
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

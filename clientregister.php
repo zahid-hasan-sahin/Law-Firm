@@ -13,7 +13,7 @@ $phonenumber = $_POST['phonenumber'];
 $filename = $_FILES["picture"]["name"];
 $tempname = $_FILES["picture"]["tmp_name"];
 
-$folder = "lawyer/images/" . $filename;
+$folder = "client/images/" . $filename;
 
 $sql = "insert into  clients(email  ,password,name,phonenumber,picture) 
 values('" . $email  . "' , '" . $password . "','" . $name . "','" . $phonenumber . "','" . $filename . "');";

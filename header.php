@@ -260,7 +260,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" name="pasword">
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                         </div>
                     </div>
                     <div class="modal-footer">
