@@ -50,9 +50,9 @@
                                 <span class="text-primary"><?php echo $category ?></span>
                             </div>
                             <ul class="list-unstyled mb-4">
-                                <li class="mb-3"><a href="#!"><i class="far fa-envelope display-25 me-3 text-secondary"></i><?php echo $email ?></a></li>
-                                <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i><?php echo $phonenumber ?></a></li>
-                                <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i><?php echo $location ?></a></li>
+                                <li class="mb-3"><a href="#"><i class="far fa-envelope display-25 me-3 text-secondary"></i><?php echo $email ?></a></li>
+                                <li class="mb-3"><a href="#"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i><?php echo $phonenumber ?></a></li>
+                                <li><a href="#"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i><?php echo $location ?></a></li>
                             </ul>
                             <ul class="top-social">
                                 <li><a href="#!" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>

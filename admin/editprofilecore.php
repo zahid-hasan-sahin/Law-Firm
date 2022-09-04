@@ -22,7 +22,6 @@ if ($filename!="") {
 
     move_uploaded_file($tempname, $folder);
 } else {
-    echo "pp";
     $sql = "UPDATE admin set email='" . $email . "' , password='" . $password . "',name='" . $name . "';";
 
     $conn->query($sql);

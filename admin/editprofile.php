@@ -8,7 +8,7 @@
     <h1 class="h3 mb-0 text-gray-800 font-weight-bold">Edit profile</h1>
     </div>
     <hr class="sidebar-divider">
-    <form action="editcategorycore.php" method="post" enctype="multipart/form-data">
+    <form action="editprofilecore.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $email ?>" name="email">

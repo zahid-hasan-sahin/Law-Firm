@@ -27,9 +27,9 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="footer-col footer-about">
-						<p class="phone-text">+84 988 449 259</p>
-						<p>contact@yourwebsite.com</p>
-						<p>99 S.t Jomblo Park Pekanbaru 28292. Indonesia</p>
+						<p class="phone-text">+880 1767 ** ** ***</p>
+						<p>email@yourwebsite.com</p>
+						<p>Dhaka.Bangladesh</p>
 						<ul class="top-social">
 							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
 							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
