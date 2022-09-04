@@ -1,6 +1,20 @@
 <?php
 include_once 'dbconnection.php';
 session_start();
+
+if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "admin") == 0) {
+    header("Location:admin");
+}
+
+if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "lawyer") == 0) {
+    header("Location:lawyer");
+}
+
+if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
+    header("Location:client");
+}
+
+
 ?>
 
 
@@ -344,15 +358,37 @@ session_start();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Client Registration</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <form action="clientregister.php" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input required name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input required name="password" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputName" class="form-label">Name</label>
+                            <input required name="name" type="text" class="form-control" id="exampleInputName">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="exampleInputPhoneNumber" class="form-label">Phone Number</label>
+                            <input name="phonenumber" required type="text" class="form-control" id="exampleInputPhoneNumber">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Picture</label>
+                            <input name="picture" required class="form-control" type="file" id="formFile">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

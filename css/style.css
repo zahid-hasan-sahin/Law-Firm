@@ -1,31 +1,52 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
 
+img {
+    max-width: 100%;
+}
 body{
-	font-family: 'Lato', sans-serif;
-	margin: 0px;
-	padding: 0px;
+    background-color: red;
 }
-img{
-	max-width:100%;
+.buttonFile {
+    position: relative;
+    overflow: hidden;
+
 }
 
-h1, h2, h3, h4, h5, h6{
-	font-family: 'Playfair Display', serif;
+.inputFile {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
 }
 
-.play-font{
-	font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
 }
 
-.poppins-font{
-	font-family: 'Poppins', sans-serif;
+.play-font {
+    font-family: 'Playfair Display', serif;
 }
 
-.lato-font{
-	font-family: 'Lato', sans-serif;
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
 }
 
-.btn{
-   font-family: 'Montserrat', sans-serif;
+.lato-font {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -162,7 +183,7 @@ section.features-section {
     background: #FFF;
     padding: 30px;
     text-align: center;
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .left-head h2 {
@@ -173,6 +194,7 @@ section.features-section {
 .right-text {
     color: #FFF;
 }
+
 .row.top-features {
     top: -61px;
     position: relative;
@@ -229,7 +251,7 @@ section.services-section {
 .services-info {
     padding: 30px;
     background: #FFF;
-    box-shadow: 0px 0px 10px rgba(0,0,0,.11);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .11);
 }
 
 .services-info h3 {
@@ -367,6 +389,7 @@ section.test-section {
     position: absolute;
     right: 0;
 }
+
 .owl-theme .owl-nav [class*=owl-]:hover {
     background: transparent !important;
     color: #000 !important;
@@ -375,6 +398,7 @@ section.test-section {
 .logo-box {
     margin: 30px 0px;
 }
+
 section.cta-section {
     background: #ed1c24;
     padding: 49px 0px 20px;
@@ -383,7 +407,7 @@ section.cta-section {
 
 section.cta-section .btn-primary {
     background: #22282d !important;
-    border-color: #22282d  !important;
+    border-color: #22282d !important;
 }
 
 
@@ -430,99 +454,99 @@ footer {
 }
 
 
-@media (max-width:991px){
-section.banner-section h1 {
-    font-size: 30px;
-    max-width: 100%;
-}
+@media (max-width:991px) {
+    section.banner-section h1 {
+        font-size: 30px;
+        max-width: 100%;
+    }
 
-.left-head h2 {
-    font-size: 30px;
-}
+    .left-head h2 {
+        font-size: 30px;
+    }
 
-section.features-section {
-    text-align: center;
-}
+    section.features-section {
+        text-align: center;
+    }
 
-.row.top-features {
-    top: 0;
-}
+    .row.top-features {
+        top: 0;
+    }
 
-section.features-section {
-    padding: 50px 0px 20px;
-}
+    section.features-section {
+        padding: 50px 0px 20px;
+    }
 
-section.about-section {
-    padding: 50px 0px 20px;
-}
+    section.about-section {
+        padding: 50px 0px 20px;
+    }
 
-section.services-section {
-    padding: 30px 0px 40px;
-}
+    section.services-section {
+        padding: 30px 0px 40px;
+    }
 
-h2.section-title {
-    font-size: 30px;
-}
+    h2.section-title {
+        font-size: 30px;
+    }
 
-.section-title-main {
-    margin-bottom: 27px;
-}
- 
-
-section.team-section {
-    padding: 50px 0px 20px;
-}
-
-section.test-section {
-    padding: 50px 0px 30px;
-}
-
-.logo-box {
-    margin: 6px 0px;
-}
-
-section.cta-section {
-    text-align: center;
-}
-
-footer {
-    padding: 50px 0px 20px;
-}
-
-section.logo-section.text-center {
-    padding-bottom: 30px;
-}
-.top-contact {
-    text-align: center;
-}
-section.banner-section {
-    padding: 100px 0px;
-}
-.banner-text .btn {
-    margin: 10px 10px;
-}
-.top-right-info .btn {
-    font-size: 11px;
-}	
-.top-right-info {
-    justify-content: center;
-    margin-top: 12px;
-    margin-bottom: 10px;
-}	
-	
-.navbar-collapse {
-    background: #000;
-    padding: 30px;
-}
-
-.navbar-light .navbar-toggler {
-    background: #FFF;
-}	
-	
-	
-}
+    .section-title-main {
+        margin-bottom: 27px;
+    }
 
 
+    section.team-section {
+        padding: 50px 0px 20px;
+    }
+
+    section.test-section {
+        padding: 50px 0px 30px;
+    }
+
+    .logo-box {
+        margin: 6px 0px;
+    }
+
+    section.cta-section {
+        text-align: center;
+    }
+
+    footer {
+        padding: 50px 0px 20px;
+    }
+
+    section.logo-section.text-center {
+        padding-bottom: 30px;
+    }
+
+    .top-contact {
+        text-align: center;
+    }
+
+    section.banner-section {
+        padding: 100px 0px;
+    }
+
+    .banner-text .btn {
+        margin: 10px 10px;
+    }
+
+    .top-right-info .btn {
+        font-size: 11px;
+    }
+
+    .top-right-info {
+        justify-content: center;
+        margin-top: 12px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse {
+        background: #000;
+        padding: 30px;
+    }
+
+    .navbar-light .navbar-toggler {
+        background: #FFF;
+    }
 
 
-
+}

@@ -78,5 +78,5 @@ $result = $conn->query($query);
 
 
 <script>
-    $("#categories").addClass("active");
+    $("#lawyer").addClass("active");
 </script>

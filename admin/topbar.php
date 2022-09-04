@@ -2,9 +2,11 @@
 
 session_start();
 require_once("../dbconnection.php");
-if (!isset($_SESSION['user']) || !$_SESSION['user'] == 'admin') {
+if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "admin")==0){
     header("Location:../index.php");
 }
+
+
 $email = $_SESSION['email'];
 $query = "select * from admin where email='" . $email . "';";
 $result = $conn->query($query);
