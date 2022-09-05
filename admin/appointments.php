@@ -11,7 +11,7 @@ $result = $conn->query($query);
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
-        <h1 class="h3 mb-0 text-gray-800 font-weight-bold">Lawyers</h1>
+        <h1 class="h3 mb-0 text-gray-800 font-weight-bold">Appointments</h1>
     </div>
     <hr class="sidebar-divider">
 
@@ -44,8 +44,8 @@ $result = $conn->query($query);
 
             ?>
                     <tr>
-                        <td><?php echo $client ?></td>
-                        <td><?php echo $lawyer ?></td>
+                        <td><a href="showclient.php?email=<?php echo $client ?>"><?php echo $client ?></a></td>
+                        <td><a href="showlawyer.php?email=<?php echo $lawyer ?>"><?php echo $lawyer ?></a></td>
                         <td><?php echo $fromdate ?></td>
                         <td><?php echo $details ?></td>
                         <td><?php echo $transaction ?></td>
