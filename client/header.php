@@ -152,7 +152,7 @@ if ($result->num_rows > 0) {
                                     <?php echo $name ?>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="editprofile.php"> <i class="fa fa-edit"></i> Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href="editprofile.php?#edit-profile-section"> <i class="fa fa-edit"></i> Edit Profile</a></li>
                                     <hr class="dropdown-divider">
                                     <li><a class="dropdown-item" href="logout.php"> <i class="	fa fa-unlock-alt"></i> Log-Out</a></li>
 

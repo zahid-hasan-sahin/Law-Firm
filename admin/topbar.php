@@ -137,7 +137,7 @@ if ($result->num_rows > 0) {
             </li>
 
             <li class="nav-item" id="appointments">
-                <a class="nav-link collapsed" href="appointment.php">
+                <a class="nav-link collapsed" href="appointments.php">
                     <i class="fa fa-file-archive-o"></i>
                     <span>Appointments</span>
                 </a>

@@ -7,9 +7,7 @@ body {
 img {
     max-width: 100%;
 }
-body{
-    background-color: red;
-}
+
 .buttonFile {
     position: relative;
     overflow: hidden;

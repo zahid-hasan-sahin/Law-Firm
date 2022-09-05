@@ -1,6 +1,6 @@
 <?php include 'header.php' ?>
 
-<div class="container-xl px-4 mt-4">
+<div class="container-xl px-4 mt-4" id="edit-profile-section">
     <form method="post" action="editprofilecore.php" enctype="multipart/form-data">
 
         <hr class="mt-0 mb-4">

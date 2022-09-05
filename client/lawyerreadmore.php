@@ -1,7 +1,6 @@
 <?php include 'header.php' ?>
 
-
-
+<?php $id = "" ?>
 <div class="container" id="details">
 
 
@@ -21,6 +20,7 @@
         if ($result->num_rows > 0) {
 
             while ($row = $result->fetch_assoc()) {
+                $id =  $row['email'];
 
                 $email = $row['email'];
                 $name = $row['name'];
@@ -84,7 +84,7 @@
 
 <div class="container  mb-5">
     <div class="col-md-12 text-center">
-        <a  href =" "type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clientloginmodel">HIRE ME</a>
+        <a href="hireme.php?id=<?php echo $id ?>" type="button" class="btn btn-primary">HIRE ME</a>
     </div>
 </div>
 
