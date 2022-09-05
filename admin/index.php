@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
-    <h1 class="h3 mb-0 text-gray-800 font-weight-bold">Home</h1>
+        <img src="images/welcome.jpg" alt="" width="1100px" height="500px">
     </div>
 
 
@@ -18,5 +18,5 @@
 
 
 <script>
-$( "#home" ).addClass( "active" );
+    $("#home").addClass("active");
 </script>

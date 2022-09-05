@@ -66,21 +66,8 @@ if ($result->num_rows > 0) {
 
     <!--Style CSS	-->
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
-    <style>
-        .fileinput {
-            position: absolute;
-            font-size: 50px;
-            opacity: 0;
-            right: 0;
-            top: 50;
-        }
-
-        .buttoninput {
-            position: relative;
-
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  
 
 </head>
 
