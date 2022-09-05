@@ -2,7 +2,7 @@
 
 session_start();
 require_once("../dbconnection.php");
-if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "admin")==0){
+if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'], "admin") == 0) {
     header("Location:../index.php");
 }
 
@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
 
         $adminname = $row['name'];
         $profilepic = $row['profilepic'];
-        $password= $row['password'];
+        $password = $row['password'];
     }
 }
 ?>
@@ -135,11 +135,21 @@ if ($result->num_rows > 0) {
                     <span>Categories</span>
                 </a>
             </li>
+            <?php
 
+            $query = "select * from appoinments where status='unseen';";
+            $result = $conn->query($query);
+            $totalUnseen = $result->num_rows;
+
+
+            ?>
+
+
+        
             <li class="nav-item" id="appointments">
                 <a class="nav-link collapsed" href="appointments.php">
                     <i class="fa fa-file-archive-o"></i>
-                    <span>Appointments</span>
+                    <span>Appointments<sup class="text-danger fs-5">(<?php echo  $totalUnseen ?>)</sup></span>
                 </a>
             </li>
 
@@ -179,6 +189,3 @@ if ($result->num_rows > 0) {
                     </div>
                 </nav>
                 <!-- End of Topbar -->
-
-
-                
