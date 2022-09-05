@@ -2,7 +2,7 @@
 
 session_start();
 require_once("../dbconnection.php");
-if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "client")==0) {
+if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'], "client") == 0) {
     header("Location:../index.php");
 }
 $email = $_SESSION['email'];
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         $password = $row['password'];
         $phonenumber = $row['phonenumber'];
         $picture = $row['picture'];
-    
+
         $joindate = $row['joindate'];
     }
 }
@@ -75,9 +75,10 @@ if ($result->num_rows > 0) {
             right: 0;
             top: 50;
         }
+
         .buttoninput {
             position: relative;
-           
+
         }
     </style>
 
@@ -146,6 +147,11 @@ if ($result->num_rows > 0) {
 
                             <li class="nav-item">
                                 <a class="nav-link" href="lawyers.php?#lawyers">Lawyers</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="appointments.php">Appoinments</a>
                             </li>
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

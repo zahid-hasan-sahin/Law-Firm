@@ -2,7 +2,7 @@
 
 session_start();
 require_once("../dbconnection.php");
-if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'] , "lawyer")==0) {
+if (!isset($_SESSION['user']) || !strcmp($_SESSION['user'], "lawyer") == 0) {
     header("Location:../index.php");
 }
 $email = $_SESSION['email'];
@@ -73,19 +73,11 @@ if ($result->num_rows > 0) {
 
     <!--Style CSS	-->
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
+    <link rel="stylesheet" href="style.css" type="text/css">
     <style>
-        .fileinput {
-            position: absolute;
-            font-size: 50px;
-            opacity: 0;
-            right: 0;
-            top: 50;
-        }
-        .buttoninput {
-            position: relative;
-           
-        }
+
+
+
     </style>
 
 </head>
@@ -150,9 +142,24 @@ if ($result->num_rows > 0) {
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?#contact-us-id">CONTACT</a>
                             </li>
+                            <?php
+                            $query5 = "select * from appoinments where status='unseen' and lawyer='" . $email . "';";
 
+                            $result5 = $conn->query($query5);
+                            $totalUnseen = $result5->num_rows;
+                
+
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?#contact-us-id">Appoinments</a>
+                                <a class="nav-link" href="appointments.php">Appoinments<sup class="text-danger fs-5">
+                                        <?php
+                                        if ($totalUnseen != 0) {
+                                            echo $totalUnseen;
+                                        }
+
+                                        ?>
+
+                                    </sup></a>
                             </li>
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
