@@ -15,8 +15,20 @@ $location = $_POST['location'];
 $bkashnumber = $_POST['bkashnumber'];
 $password = $_POST['password'];
 
+$facebook = $_POST['facebook'];
+$instagram = $_POST['instagram'];
+$twitter = $_POST['twitter'];
+$whatsapp = $_POST['whatsapp'];
+
+$sql1 = "INSERT INTO socialmedia (email,facebook, instagram, twitter, whatsapp) 
+VALUES ('".$email ."','" . $facebook . "', '" . $instagram . "','" . $twitter . "', '" . $whatsapp ."')
+ON DUPLICATE KEY UPDATE
+facebook='" . $facebook . "', instagram='" . $instagram . "', twitter='" . $twitter . "', whatsapp='" . $whatsapp . "'";
 
 
+$conn->query($sql1);
+
+echo $sql1;
 
 $filename = $_FILES["image"]["name"];
 

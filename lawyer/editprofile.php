@@ -134,20 +134,88 @@
                                                 </div>
 
                                             </div>
-                                            <div class="row">
-                                                <div class="col d-flex justify-content-end">
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
-                                                </div>
+                                            <hr>
+                                            <br>
+                                            <div class="container text-center">
+                                                <h5>Social Media links</h5>
                                             </div>
 
 
+                                            <?php
+                                            $email = $_SESSION['email'];
+                                            $query1 = "select * from socialmedia where email='" . $email . "';";
+                                            $result1 = $conn->query($query1);
+                                            $facebook = "";
+                                            $instagram = "";
+                                            $twitter = "";
+                                            $whatsapp = "";
+
+                                                            
+                         
+                                            
+                                            if ($result1->num_rows > 0) {
+                                     
+
+                                                while ($row1 = $result1->fetch_assoc()) {
+
+                                                    $facebook = $row1['facebook'];
+                                                    $instagram = $row1['instagram'];
+                                                    $twitter = $row1['twitter'];
+                                                    $whatsapp = $row1['whatsapp'];
+                                                }
+                                            }
+                                            ?>
+
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="col mt-3">
+                                                            <div class="form-group">
+                                                                <label>Facebook link</label>
+                                                                <input class="form-control" type="text" name="facebook" value="<?php echo $facebook ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col mt-3">
+                                                            <div class="form-group">
+                                                                <label>Instagram Link</label>
+                                                                <input class="form-control" type="text" name="instagram" value="<?php echo $instagram ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col mt-3">
+                                                                    <div class="form-group">
+                                                                        <label>Twitter link</label>
+                                                                        <input class="form-control" type="text" name="twitter" value="<?php echo $twitter ?>">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col mt-3">
+                                                                    <div class="form-group">
+                                                                        <label>Whatsapp Number</label>
+                                                                        <input class="form-control" type="text" name="whatsapp" value="<?php echo $whatsapp ?>">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="row mt-4">
+                                                                <div class="col d-flex justify-content-end">
+                                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         </form>
     </div>
 
