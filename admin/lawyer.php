@@ -12,7 +12,7 @@ $result = $conn->query($query);
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
         <h1 class="h3 mb-0 text-gray-800 font-weight-bold">Lawyers</h1>
-           </div>
+    </div>
     <hr class="sidebar-divider">
 
     <table class="table table-striped">
@@ -49,10 +49,13 @@ $result = $conn->query($query);
                         <td><?php echo $rate ?></td>
                         <td><?php echo $description ?></td>
                         <td><?php echo $location ?></td>
-      
+
                         <td><img src="../lawyer/images/<?php echo $picture ?>" height="50px" widht="50px" alt="image"></td>
-                        <td> 
-                            <a href="deletelawyer.php?email=<?php echo $email ?>"><i class="	fa fa-trash-o fa-2x text-danger"></i></a>
+                        <td>
+                            <a href="editlawyer.php?email=<?php echo $email ?>"><i class="fa fa-edit "></i></a>
+                            <a href="deletelawyer.php?email=<?php echo $email ?>"><i class="fa fa-trash-o text-danger"></i></a>
+
+
                         </td>
                     </tr>
 

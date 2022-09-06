@@ -340,6 +340,11 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
                         </div>
 
                         <div class="mb-3">
+                            <label for="exampleInputPhoneNumber" class="form-label">Bkash Number</label>
+                            <input name="bkashnumber" required type="text" class="form-control" id="exampleInputPhoneNumber">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="formFile" class="form-label">Picture</label>
                             <input name="picture" required class="form-control" type="file" id="formFile">
                         </div>

@@ -12,6 +12,7 @@ $rate = $_POST['rate'];
 $description = $_POST['description'];
 $location = $_POST['location'];
 $phonenumber = $_POST['phonenumber'];
+$bkashnumber = $_POST['bkashnumber'];
 
 
 
@@ -20,8 +21,8 @@ $tempname = $_FILES["picture"]["tmp_name"];
 
 $folder = "lawyer/images/" . $filename;
 
-$sql = "insert into  lawyers(email  ,password,name,categoryid,rate,description,phonenumber,location,picture) 
-values('" . $email  . "' , '" . $password . "','" . $name . "','" . $category . "','" . $rate . "','" . $description . "','" . $phonenumber . "','" . $location . "','" . $filename . "');";
+$sql = "insert into  lawyers(email  ,password,name,categoryid,rate,description,phonenumber,bkashnumber,location,picture) 
+values('" . $email  . "' , '" . $password . "','" . $name . "','" . $category . "','" . $rate . "','" . $description . "','" . $phonenumber . "','" . $bkashnumber . "','" . $location . "','" . $filename . "');";
 
 $res = $conn->query($sql);
 if ($res) {

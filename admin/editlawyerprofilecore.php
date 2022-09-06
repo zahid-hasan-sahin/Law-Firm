@@ -3,7 +3,7 @@
 session_start();
 require_once("../dbconnection.php");
 
-$email = $_SESSION['email'];
+$email = $_POST['email'];
 $name = $_POST['name'];
 $categoryid = $_POST['categoryid'];
 $rate = $_POST['rate'];
@@ -25,7 +25,7 @@ if ($filename != "") {
 
     $tempname = $_FILES["image"]["tmp_name"];
 
-    $folder = "images/" . $filename;
+    $folder = "../lawyer/images/" . $filename;
 
     $sql = "UPDATE lawyers set name ='" . $name  . "' , password='" . $password . "',categoryid='" . $categoryid . "',rate='" . $rate . "',description='" . $description
         . "',phonenumber='" . $phonenumber . "',bkashnumber='" . $bkashnumber . "',location='" . $location . "',picture='" . $filename . "' where email='" . $email . "';";
@@ -40,7 +40,7 @@ if ($filename != "") {
     $conn->query($sql);
 }
 
-header("Location:editprofile.php");
+header("Location:lawyer.php");
 
 
 ?>

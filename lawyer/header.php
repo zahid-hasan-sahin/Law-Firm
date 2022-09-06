@@ -17,7 +17,7 @@ $phonenumber = "";
 $location = "";
 $picture = "";
 $joindate = "";
-
+$bkashnumber = "";
 
 if ($result->num_rows > 0) {
 
@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
         $rate = $row['rate'];
         $description = $row['description'];
         $phonenumber = $row['phonenumber'];
+        $bkashnumber = $row['bkashnumber'];
         $location = $row['location'];
         $picture = $row['picture'];
         $joindate = $row['joindate'];
@@ -147,7 +148,7 @@ if ($result->num_rows > 0) {
 
                             $result5 = $conn->query($query5);
                             $totalUnseen = $result5->num_rows;
-                
+
 
                             ?>
                             <li class="nav-item">
