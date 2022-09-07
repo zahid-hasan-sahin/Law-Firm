@@ -76,9 +76,129 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
+        .sb-search {
+            position: relative;
+            border-radius: 10px;
+            width: 0%;
+            min-width: 50px;
+            height: 50px;
+            float: right;
+            overflow: hidden;
+            -webkit-transition: width 0.3s;
+            -moz-transition: width 0.3s;
+            transition: width 0.5s;
+            -webkit-backface-visibility: hidden;
+        }
 
+        .bborder {
+            opacity: 1;
+        }
 
+        .noborder {
+            opacity: 0;
+        }
 
+        .sb-search-input {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            border: none;
+            outline: none;
+            width: 300px;
+            height: 50px;
+            margin: 0;
+            z-index: 10;
+            padding: 20px 65px 20px 20px;
+            font-family: inherit;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        input[type="search"].sb-search-input {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+            border: 1px black solid;
+        }
+
+        .sb-search-input::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        .sb-search-input:-moz-placeholder {
+            color: #fff;
+        }
+
+        .sb-search-input::-moz-placeholder {
+            color: #fff;
+        }
+
+        .sb-search-input:-ms-input-placeholder {
+            color: #fff;
+        }
+
+        .sb-icon-search,
+        .sb-search-submit {
+            width: 60px;
+            height: 60px;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            margin: 0;
+            line-height: 60px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .sb-search-submit {
+            background: #fff;
+            /* IE needs this */
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            /* IE 8 */
+            filter: alpha(opacity=0);
+            /* IE 5-7 */
+            opacity: 0;
+            color: transparent;
+            border: none;
+            outline: none;
+            z-index: -1;
+        }
+
+        .sb-icon-search {
+            color: black;
+            background: #fff;
+            width: 35px;
+            height: 0px;
+            z-index: 90;
+            margin: -5px;
+            top: 1px;
+            right: 6px;
+            font-size: 22px;
+            font-family: 'icomoon';
+
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sb-icon-search:before {
+            content: "";
+        }
+
+        .sb-search.sb-search-open,
+        .no-js .sb-search {
+            width: 300px;
+        }
+
+        .sb-search.sb-search-open .sb-icon-search,
+        .no-js .sb-search .sb-icon-search {
+            background: #fff;
+            color: black;
+            z-index: 11;
+        }
     </style>
 
 </head>
@@ -103,7 +223,7 @@ if ($result->num_rows > 0) {
                 <div class="col-lg-6">
                     <div class="top-right-info">
                         <ul class="top-social">
-                           
+
                         </ul>
 
                         <a href="lawyers.php?#lawyers" class="btn btn-primary">book an lowyer</a>
@@ -121,7 +241,7 @@ if ($result->num_rows > 0) {
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="../images/logo.png" alt=""  class="position-absolute top-0 start-0"  height='150px' width='150px'></a>
+                    <a class="navbar-brand" href="index.php"><img src="../images/logo.png" alt="" class="position-absolute top-0 start-0" height='150px' width='150px'></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -173,6 +293,17 @@ if ($result->num_rows > 0) {
                             </div>
 
 
+                            <li class="nav-item dropdown">
+                                <div id="sb-search" class="sb-search ">
+                                    <form role="search" action="lawyers.php?#lawyers" method="get">
+                                        <input class="sb-search-input qutu noborder" onkeyup="buttonUp();" onblur="monkey();" type="search" name="search" id="search">
+                                        <input class="sb-search-submit" type="submit" value="">
+                                        <span class="sb-icon-search text-danger"><i class="fa fa-search"></i></span>
+                                    </form>
+                                </div>
+                            </li>
+
+
 
                         </ul>
 
@@ -180,17 +311,6 @@ if ($result->num_rows > 0) {
                 </div>
             </nav>
         </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <form class="d-flex col-md-4 offset-md-8  " role="search" action="lawyers.php?#lawyers" method="get">
-                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search" required>
-                    <button class="btn btn-outline-primary bg-warning" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-
-
     </header>
     <!--End Header	-->
 
@@ -215,3 +335,63 @@ if ($result->num_rows > 0) {
         </div>
     </section>
     <!--End Banner Section	-->
+
+
+
+    <!--searchig js-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+        function buttonUp() {
+            var valux = $('.sb-search-input').val();
+            valux = $.trim(valux).length;
+            if (valux !== 0) {
+                $('.sb-search-submit').css('z-index', '99');
+            } else {
+                $('.sb-search-input').val('');
+                $('.sb-search-submit').css('z-index', '-999');
+            }
+        }
+
+        $(document).ready(function() {
+            var submitIcon = $('.sb-icon-search');
+            var submitInput = $('.sb-search-input');
+            var searchBox = $('.sb-search');
+            var qutu = $('.qutu');
+            var isOpen = false;
+
+            $(document).mouseup(function() {
+                if (isOpen == true) {
+                    submitInput.val('');
+                    $('.sb-search-submit').css('z-index', '-999');
+                    submitIcon.click();
+                }
+            });
+
+            submitIcon.mouseup(function() {
+                return false;
+            });
+
+            searchBox.mouseup(function() {
+                return false;
+            });
+
+            submitIcon.click(function() {
+                if (isOpen == false) {
+                    searchBox.addClass('sb-search-open');
+                    qutu.removeClass('noborder');
+                    qutu.addClass('bborder');
+                    searchBox.find('i.fa').removeClass('fa-search');
+                    searchBox.find('i.fa').addClass('fa-times');
+                    isOpen = true;
+                } else {
+                    searchBox.removeClass('sb-search-open');
+                    qutu.removeClass('bborder');
+                    qutu.addClass('noborder');
+                    searchBox.find('i.fa').removeClass('fa-times');
+                    searchBox.find('i.fa').addClass('fa-search');
+                    isOpen = false;
+                }
+            });
+
+        });
+    </script>
