@@ -31,10 +31,7 @@
 						<p>email@yourwebsite.com</p>
 						<p>Dhaka.Bangladesh</p>
 						<ul class="top-social">
-							<li><a href=""><i class="fa fa-facebook"></i></a> </li>
-							<li><a href=""><i class="fa fa-instagram"></i></a> </li>
-							<li><a href=""><i class="fa fa-twitter"></i></a> </li>
-							<li><a href=""><i class="fa fa-whatsapp"></i></a> </li>
+							
 						</ul>
 					</div>
 				</div>

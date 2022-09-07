@@ -77,10 +77,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
                 <div class="col-lg-6">
                     <div class="top-right-info">
                         <ul class="top-social">
-                            <li><a href=""><i class="fa fa-facebook"></i></a> </li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a> </li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a> </li>
-                            <li><a href=""><i class="fa fa-pinterest"></i></a> </li>
+                           
                         </ul>
 
                         <a href="lawyers.php?#lawyers" class="btn btn-primary">book an lowyer</a>

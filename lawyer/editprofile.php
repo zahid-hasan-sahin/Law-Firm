@@ -150,11 +150,11 @@
                                             $twitter = "";
                                             $whatsapp = "";
 
-                                                            
-                         
-                                            
+
+
+
                                             if ($result1->num_rows > 0) {
-                                     
+
 
                                                 while ($row1 = $result1->fetch_assoc()) {
 
@@ -172,13 +172,13 @@
                                                     <div class="row">
                                                         <div class="col mt-3">
                                                             <div class="form-group">
-                                                                <label>Facebook link</label>
+                                                                <label>Facebook Username</label>
                                                                 <input class="form-control" type="text" name="facebook" value="<?php echo $facebook ?>">
                                                             </div>
                                                         </div>
                                                         <div class="col mt-3">
                                                             <div class="form-group">
-                                                                <label>Instagram Link</label>
+                                                                <label>Instagram Username</label>
                                                                 <input class="form-control" type="text" name="instagram" value="<?php echo $instagram ?>">
                                                             </div>
                                                         </div>
@@ -189,7 +189,7 @@
                                                             <div class="row">
                                                                 <div class="col mt-3">
                                                                     <div class="form-group">
-                                                                        <label>Twitter link</label>
+                                                                        <label>Twitter Username</label>
                                                                         <input class="form-control" type="text" name="twitter" value="<?php echo $twitter ?>">
                                                                     </div>
                                                                 </div>
