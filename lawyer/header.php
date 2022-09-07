@@ -121,7 +121,7 @@ if ($result->num_rows > 0) {
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="logo.png" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="../images/logo.png" alt=""  class="position-absolute top-0 start-0"  height='150px' width='150px'></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

@@ -4,7 +4,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
-        <img src="images/welcome.jpg" alt="" width="1100px" height="500px">
+        <img src="images/welcom.png" alt="fdsa" width="1100px" height="500px">
     </div>
 
 

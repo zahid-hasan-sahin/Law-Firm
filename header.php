@@ -77,7 +77,7 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
                 <div class="col-lg-6">
                     <div class="top-right-info">
                         <ul class="top-social">
-                           
+
                         </ul>
 
                         <a href="lawyers.php?#lawyers" class="btn btn-primary">book an lowyer</a>
@@ -95,11 +95,10 @@ if (isset($_SESSION['user']) && strcmp($_SESSION['user'], "client") == 0) {
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="" class="position-absolute top-0 start-0"  height='150px' width='150px'></a>
+
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link " href="index.php?">Home</a>

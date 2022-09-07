@@ -20,9 +20,18 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="">
                     <label required for="transaction" class="form-label">Transaction id(Bkash)</label>
-                    <input type="text" id="transaction" class="form-control" name = "transaction">
+                    <input type="text" id="transaction" class="form-control" name="transaction">
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+
+                        <div class="col-md-8">
+                            <a class="toggle-modal text-warning" onclick=" OpenPopupCenter('paymentinstruction.php?id=<?php echo $_GET['id'] ?>','Payment Instruction','600','600')"><b>Payment Instruction<sup class="text-danger">*</sup></b></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -34,6 +43,12 @@
         </div>
     </div>
 </div>
-
+<script language="javascript" type="text/javascript">
+    function OpenPopupCenter(pageURL, title, w, h) {
+        var left = (screen.width - w) / 2;
+        var top = (screen.height - h) / 4; // for 25% - devide by 4  |  for 33% - devide by 3
+        var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
+</script>
 
 <?php include 'footer.php' ?>
