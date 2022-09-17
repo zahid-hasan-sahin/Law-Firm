@@ -1,3 +1,5 @@
+Law firm is a online based system where lawyers can create their profile and clients can hire them.
+
 # Tools:
 HTML, CSS,BOOTSTRAP,JAVASRIPT,JQUERY,PHP,MYSQL.
 # admin:
